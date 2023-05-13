@@ -23,10 +23,13 @@ namespace FileStuff
                 {
                     Console.WriteLine("  volume label: {0}", info.VolumeLabel);
                     Console.WriteLine("  drive format: {0}", info.DriveFormat);
-                    Console.WriteLine("  available free space: {0}", info.AvailableFreeSpace);
-                    Console.WriteLine("  total free space: {0}", info.TotalFreeSpace);
-                    Console.WriteLine("  total size: {0}", info.TotalSize);
+                    Console.WriteLine("  available free space: {0}", info.AvailableFreeSpace.ToString("n0"));
+                    Console.WriteLine("  total free space: {0}", info.TotalFreeSpace.ToString("n0"));
+                    Console.WriteLine("  total size: {0}", info.TotalSize.ToString("n0"));
                 }
+
+                // wait for input so info above does not disappear immediately
+                string input = Console.ReadLine();
             }
         }
 
