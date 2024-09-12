@@ -27,25 +27,31 @@ namespace FileStuff
                     Console.WriteLine("  total free space: {0}", info.TotalFreeSpace.ToString("n0"));
                     Console.WriteLine("  total size: {0}", info.TotalSize.ToString("n0"));
                 }
-
-                // wait for input so info above does not disappear immediately
-                string input = Console.ReadLine();
             }
         }
 
         static void Main(string[] args)
         {
+            bool isDone = false;
             Console.WriteLine("Starting ...\n");
 
-            Console.WriteLine("1) Drive Info");
-            Console.WriteLine("2) Subdirectories");
-            Console.WriteLine("3) File Info");
-
-            string input = Console.ReadLine();
-            //Console.WriteLine("input = |{0}|", input);
-            if (input == "1")
+            while (!isDone)
             {
-                ShowDriveInfo();
+                Console.WriteLine("1) Drive Info");
+                Console.WriteLine("2) Subdirectories");
+                Console.WriteLine("3) File Info");
+                Console.WriteLine("q) quit");
+
+                string input = Console.ReadLine();
+                //Console.WriteLine("input = |{0}|", input);
+                if (input == "1")
+                {
+                    ShowDriveInfo();
+                } else if (input == "q" || input == "Q")
+                {
+                    isDone = true;
+                }
+                Console.WriteLine();
             }
 
             Console.WriteLine("\nDone.");
